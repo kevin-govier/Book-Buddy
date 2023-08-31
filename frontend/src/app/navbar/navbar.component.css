@@ -1,0 +1,57 @@
+.navbar {
+    background-color: cornflowerblue;
+    color: white;
+    height: 64px;
+  }
+
+.title {
+    color: white;
+    text-decoration: none;
+    font-family: "Myanmar Text", "Helvetica", sans-serif;
+}
+
+.tabs {
+    color: #E8E8E8;
+    margin: 10px;
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.tabs:hover {
+    color: white;
+}
+
+.tabs.active {
+    color: white;
+}
+
+.tabs.home-tab.active {
+    color: white;
+}
+
+.icon{
+    margin-right: 0.75rem;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+}
+
+@media (max-width: 880px) {
+    .hamburger {
+        display: block;
+        color: white;
+    }
+
+    .links {
+        display: none;
+        
+    }
+}

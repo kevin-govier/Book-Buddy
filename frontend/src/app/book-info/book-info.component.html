@@ -1,0 +1,80 @@
+<div style="background-color: white" class = "row">
+    <div class = "container">
+        <div class = "mainInfo">
+
+            <div class = "coverButtons">
+                
+                <div class = "image">
+                    <img [src] ="bookCoverLarge" alt="Book Cover">
+                </div>
+                
+                <button mat-raised-button color="primary" type = "submit" class = "button" (click) = "isBookInCollection ? removeFromCollection() : addToCollection()">
+                    <div class = "insideButton">
+                        <span class = "buttonText">Bookshelf   </span>
+                        <div *ngIf = "!isBookInCollection" class = "iconWrapper">
+                            <mat-icon class = "icon">add</mat-icon>
+                        </div>
+                        <div *ngIf = "isBookInCollection" class = "iconWrapper">
+                            <mat-icon class = "icon">remove</mat-icon>
+                        </div>
+                    </div>
+                </button>
+                
+                <button mat-raised-button color="primary" type = "submit" class = "button" (click) = "addReview()">
+                    <div class = "insideButton">
+                        <span class = "buttonText">Review</span>
+                        <div class="iconWrapper">
+                            <mat-icon class = "icon">add</mat-icon>
+                        </div>
+                    </div>
+                </button>
+                
+            
+                <button mat-raised-button color="primary" type = "submit" class = "button" (click) = "isBookInReadingList ? removeFromReadingList() : addToReadingList()">
+                    <div class = "insideButton">
+                        <span class = "buttonText">Reading List</span>
+                        <div *ngIf = "!isBookInReadingList" class = "iconWrapper">
+                            <mat-icon class = "icon">add</mat-icon>
+                        </div>
+                        <div *ngIf = "isBookInReadingList" class = "iconWrapper">
+                            <mat-icon class = "icon">remove</mat-icon>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            
+            <div class = "info">
+                <h1 class = "title">{{bookTitle}} <span class = "date">{{bookDate}}</span></h1>
+                <h3 class="author">Written by {{ bookAuthor }}</h3>
+
+                <div *ngIf = "bookRating !== undefined" class = "ratingWrapper">
+                    <div class = "rating">
+                        <div class = "stars" *ngFor="let star of [1, 2, 3, 4, 5]">
+                            <mat-icon [ngClass] = "{'gold-star': star <= bookRatingRounded, 'black-star': star > bookRatingRounded}">
+                                {{ star <= bookRatingRounded ? 'star' : 'star_border' }}
+                            </mat-icon>
+                        </div>
+                    </div>
+                    <h3 class = "bookRating">{{ bookRating }}</h3>
+                    <h5 class = "bookRating">average user rating</h5>
+                </div>
+
+                <hr class = "divider">
+
+                <div [innerHTML] = "bookDescription" class = "description"></div>
+
+                <hr class = "divider">
+
+                <h1 class = "detailsTitle">Details</h1>
+
+                <div *ngIf = "bookGenres !== undefined">
+                    <p class = "details">Genre(s): {{ bookGenres }}</p>
+                </div>
+                <p class = "details">ISBN: {{ bookISBN }}</p>
+                <p class = "details">Publisher: {{ bookPublisher }}</p>
+                <p class = "details">Page Count: {{ bookPageCount }}</p>
+                <p class = "details">Language: {{ bookLanguage }}</p>
+            </div>
+        </div>
+    </div>
+</div>

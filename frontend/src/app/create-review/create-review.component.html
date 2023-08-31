@@ -1,0 +1,21 @@
+<form (ngSubmit) = "createReview()" class = "form" style="background-color: lightcyan;">
+
+    <div class = "image">
+        <img [src] ="bookCover" alt="Book Cover">
+    </div>
+    
+    <div class = "flex-content">
+        <div class = "info">
+            <h1 class = "title">{{bookTitle}} <span class = "date">{{bookDate}}</span></h1>
+            <div class="rating">
+                <mat-icon class = "ma-ic" (click) = "rate(1)" [ngClass] = "{ 'active': createReviewRating >= 1 }"> star_border </mat-icon>
+                <mat-icon class = "ma-ic" (click) = "rate(2)" [ngClass] = "{ 'active': createReviewRating >= 2 }"> star_border </mat-icon>
+                <mat-icon class = "ma-ic" (click) = "rate(3)" [ngClass] = "{ 'active': createReviewRating >= 3 }"> star_border </mat-icon>
+                <mat-icon class = "ma-ic" (click) = "rate(4)" [ngClass] = "{ 'active': createReviewRating >= 4 }"> star_border </mat-icon>
+                <mat-icon class = "ma-ic" (click) = "rate(5)" [ngClass] = "{ 'active': createReviewRating === 5 }"> star_border </mat-icon>
+            </div>
+        </div>
+        <textarea matInput class = "textField" placeholder = "Add review..." [(ngModel)] = "body" name = "save" maxlength="3000"></textarea>
+        <button mat-raised-button color="primary" class = "button" type = "submit" [disabled] = "!body || createReviewRating === undefined">Save</button>
+    </div>
+</form> 

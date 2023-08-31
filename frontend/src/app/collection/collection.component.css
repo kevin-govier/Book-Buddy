@@ -1,0 +1,269 @@
+h1{
+    text-align: center;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    font-family: "Century Gothic", "Helvetica", sans-serif;
+}
+
+.row {
+    --bs-gutter-x: 0;
+}
+
+.container {
+    background-color: lightcyan;
+    min-height: calc(100vh - 64px);
+    width: calc(66.6667%);
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: 1000px) {
+        width: 100%
+    }
+}
+
+.mainInfo {
+    margin: 0.9rem;
+    margin-top: 0.25rem;
+}
+.mainInfo-empty {
+    margin: 0.9rem;
+    margin-top: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.books-wrapper {
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid black;
+    margin: 0;
+    margin-bottom: 1rem;
+    padding: 0;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    width: 100%;
+}
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    gap: 1rem; /* space between books */
+    padding-top: 1rem;
+    flex: 1;
+    padding-left: 1rem;
+}
+
+.bookContainer {
+    flex: 0 0 calc(12.5% - 1rem);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.bookId {
+    flex: 1;
+    position: relative;
+}
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+.image-wrapper {
+    width: 100%;
+    padding-top: 150%;
+    height: auto; 
+    overflow: hidden;
+
+    position: relative;
+}
+
+.icon-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    border-radius: 50%;
+    opacity: 0;
+    margin-bottom: 0.625rem;
+}
+
+.icon{
+    color: white;
+}
+
+.icon:hover {
+    color: #89cff0;
+    cursor: pointer;
+}
+  
+.image-wrapper:hover .icon-wrapper {
+    opacity: 1;
+    color: black;
+}
+
+.image-wrapper:hover img {
+    opacity: 0.85;
+}
+
+.buttons {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttons-empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+
+    @media (max-height: 760px) {
+        height: 60vh;
+    }
+    @media (max-height: 570px) {
+        height: 50vh;
+    }
+}
+
+.button, .solo-button {
+    width: 12rem;
+    height: 3.125rem;
+    background-color:darkcyan !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.625rem;
+    border-radius: 25px;
+    font-family: "Century Gothic", "Helvetica", sans-serif;
+}
+
+.addBook {
+    text-decoration: none;
+}
+
+.sortTotalContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 0.9rem;
+}
+
+.sortAndTotalContainer {
+    display: flex;
+    align-items: center;
+}
+
+.total {
+    margin: 0;
+}
+.sortBy {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding-left: 0.35rem;
+}
+.sortBy:hover {
+    cursor: pointer;
+}
+.sortContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 0.9rem;
+}
+.arrowhead{
+    font-size: 1.25rem;
+}
+
+
+
+
+@media (max-width: 1400px) {
+    .bookContainer {
+      flex-basis: calc(14.2857% - 1rem);
+      margin-right: 0;
+      padding-right: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .bookContainer {
+      flex-basis: calc(16.6667% - 1rem); 
+      margin-right: 0;
+      padding-right: 0;
+    }
+}
+
+@media (max-width: 1000px) {
+    .bookContainer {
+      flex-basis: calc(16.6667% - 1rem);
+      margin-right: 0;
+      padding-right: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .bookContainer {
+      flex-basis: calc(20% - 1rem);
+      margin-right: 0;
+      padding-right: 0;
+    }
+    .sortContainer{
+        font-size: small;
+    }
+    .total{
+        font-size: small;
+    }
+    .mainInfo, .mainInfo-empty{
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .bookContainer {
+      flex-basis: calc(25% - 1rem);
+      margin-right: 0;
+      padding-right: 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .bookContainer {
+      flex-basis: calc(33.333333% - 1rem);
+      margin-right: 0;
+      padding-right: 0;
+    }
+
+    .button{
+        width: 8rem;
+        height: 2rem;
+        font-size: 0.5rem;
+    }
+    .solo-button{
+        width: 8rem;
+        height: 2.5rem;
+    }
+    .sortContainer{
+        font-size: x-small;
+    }
+    .total{
+        font-size: x-small;
+    }
+}

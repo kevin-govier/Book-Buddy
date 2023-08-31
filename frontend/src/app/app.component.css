@@ -1,0 +1,8 @@
+app-navbar{
+    position: sticky;
+    top: 0;
+    background-color: cornflowerblue;
+    z-index: 100;
+    padding: 0;
+    margin: 0;
+}

@@ -1,0 +1,123 @@
+<div *ngIf = "totalBooks !== 0">
+    <div style="background-color: white" class = "row">
+        <div class = "container">
+
+            <h1>Bookshelf</h1>
+
+            <div class="sortTotalContainer">
+                <div class="sortAndTotalContainer">
+                    <span class="sortContainer">Sort by<a [matMenuTriggerFor]="menu" class="sortBy">{{sortType}}<mat-icon class="arrowhead">expand_more</mat-icon></a></span>
+                </div>
+                <p class="total">{{totalBooks}} Books</p>
+            </div>
+
+            
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click) = "sortBy('NEWLY ADDED')">NEWLY ADDED</button>
+                <button mat-menu-item (click) = "sortBy('BOOK TITLE')">BOOK TITLE</button>
+                <button mat-menu-item (click) = "sortBy('NEWEST RELEASE')">NEWEST RELEASE</button>
+                <button mat-menu-item (click) = "sortBy('OLDEST RELEASE')">OLDEST RELEASE</button>
+            </mat-menu>
+
+            <div class = "mainInfo">
+                <div class="books-wrapper">
+                    <div class = "books">
+                        <ng-container *ngFor = "let book of collection$ | async; let i = index">
+                            <div class="bookContainer">
+                                <div class = "bookId">
+                                    <div class = "image-wrapper" #imageWrapper>
+                                        <a [href]="'/book-info/:' + book.bookId">
+                                            <img [src]="book.bookCover" [alt]="book.bookTitle">
+                                        </a>
+                                        <div class = "icon-wrapper" (click) = "preventDefault($event)">
+                                            <mat-icon class = "icon" [matMenuTriggerFor]="menu">more_horiz</mat-icon>
+                                            <mat-menu #menu="matMenu">
+                                                <button mat-menu-item (click) = "removeBook(book.bookId, userId, false)">
+                                                <mat-icon>delete</mat-icon>
+                                                <span>Remove from Bookshelf</span>
+                                                </button>
+                                                <button mat-menu-item (click) = "reviewBook(book.bookId, book.bookTitle, book.bookCover, book.bookDate, userId)">
+                                                    <mat-icon>rate_review</mat-icon>
+                                                    <span>Add a Review</span>
+                                                </button>
+                                            </mat-menu>
+                                        </div>
+                                    </div>                        
+                                    
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                
+
+
+                <div class = "buttons">
+                    <button mat-raised-button color="primary" type = "submit" class = "button" [routerLink]="['/bookSearch']">Add Book</button>
+                    <button mat-raised-button color="primary" type = "submit" class = "button" (click) = "clearCollection()">Clear Bookshelf</button>
+                </div>
+                    
+
+            </div>
+        </div>
+    </div>          
+</div>
+
+<div *ngIf = "totalBooks === 0">
+    <div style="background-color: white" class = "row">
+        <div style = "min-height: calc(100vh - 64px)" class = "container col-md-8 offset-md-2">
+
+            <h1>Bookshelf</h1>
+
+            <div class="sortTotalContainer">
+                <div class="sortAndTotalContainer">
+                    <span class="sortContainer">Sort by<a [matMenuTriggerFor]="menu" class="sortBy">{{sortType}}<mat-icon class="arrowhead">expand_more</mat-icon></a></span>
+                </div>
+                <p class="total">{{totalBooks}} Books</p>
+            </div>
+
+            
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click) = "sortBy('NEWLY ADDED')">NEWLY ADDED</button>
+                <button mat-menu-item (click) = "sortBy('BOOK TITLE')">BOOK TITLE</button>
+                <button mat-menu-item (click) = "sortBy('NEWEST RELEASE')">NEWEST RELEASE</button>
+                <button mat-menu-item (click) = "sortBy('OLDEST RELEASE')">OLDEST RELEASE</button>
+            </mat-menu>
+
+            <div class = "mainInfo-empty">
+                <div class = books-wrapper>
+                    <div class = "books">
+                        <ng-container *ngFor = "let book of collection$ | async; let i = index">
+                            <div class="bookContainer">
+                                <div class = "bookId">
+                                    <div class = "image-wrapper" #imageWrapper>
+                                        <a [href]="'/book-info/:' + book.bookId">
+                                            <img [src]="book.bookCover" [alt]="book.bookTitle">
+                                        </a>
+                                        <div class = "icon-wrapper" (click) = "preventDefault($event)">
+                                            <mat-icon class = "icon" [matMenuTriggerFor]="menu">more_horiz</mat-icon>
+                                            <mat-menu #menu="matMenu">
+                                                <button mat-menu-item (click) = "removeBook(book.bookId, userId, false)">
+                                                <mat-icon>delete</mat-icon>
+                                                <span>Remove from Bookshelf</span>
+                                                </button>
+                                                <button mat-menu-item (click) = "reviewBook(book.bookId, book.bookTitle, book.bookCover, book.bookDate, userId)">
+                                                    <mat-icon>rate_review</mat-icon>
+                                                    <span>Add a Review</span>
+                                                </button>
+                                            </mat-menu>
+                                        </div>
+                                    </div>                        
+                                    
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class = "buttons-empty">
+                    <button mat-raised-button color="primary" type = "submit" class = "solo-button" [routerLink]="['/bookSearch']">Add Book</button>
+                </div>
+            </div>
+        </div>
+    </div>          
+</div>

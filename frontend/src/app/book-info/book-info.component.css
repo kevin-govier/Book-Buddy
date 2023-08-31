@@ -1,0 +1,246 @@
+.mainInfo {
+    display: flex;
+    align-items: flex-start;
+    margin: 0.9375rem;
+}
+
+.row {
+    --bs-gutter-x: 0;
+}
+
+.container{
+    background-color:lightcyan; 
+    min-height: calc(100vh - 64px);
+    width: calc(66.6667%);
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: 1000px) {
+        width: 100%
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    margin-bottom: 0.10px;
+}
+
+p {
+    margin: 0;
+}
+
+.button {
+    max-width: 100%;
+    width: 100%;
+    height: 3.125rem;
+    background-color:darkcyan !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.625rem;
+    border-radius: 1.5625rem;
+}
+
+.buttonText {
+    margin-left: 0.3125rem;
+    font-size: 1rem;
+}
+
+.insideButton {
+    display: flex;
+    align-items: center;
+}
+
+.iconWrapper {
+    font-size: 1rem;
+}
+
+.icon {
+    padding-top: 0.1875rem; /*aligns the icon with the text in the button*/
+    transform: scale(0.8);
+    order: 2;
+}
+
+.coverButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: sticky;
+    top: 5rem;
+    z-index: 99;
+}
+
+.rating {
+    display: flex;
+}
+
+.ratingWrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.stars {
+    transform: scale(2);
+    margin-left: 0.625rem;
+    margin-right: 0.625rem;
+}
+
+.gold-star {
+    color: gold;
+}
+  
+.black-star {
+    color: black;
+}
+
+.bookRating {
+    margin-left: 0.3125rem;
+    margin-right: 0.3125rem;
+    font-family: "Century Gothic", "Helvetica", sans-serif;
+}
+
+.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.25rem;
+    margin-top: 0;
+}
+
+.date {
+    font-size: 1.3rem;
+    font-family: "Century Gothic", "Helvetica", sans-serif;
+}
+
+.title {
+    margin: 0; 
+    font-family: "Century Gothic", "Helvetica", sans-serif; 
+}
+
+.author {
+    margin: 0;
+    padding-bottom: 1.5rem;
+    font-family: "Century Gothic", "Helvetica", sans-serif;
+}
+
+.details, .detailsTitle {
+    margin-top: 0.3125rem;
+    font-family: "Century Gothic", "Helvetica", sans-serif;
+}
+
+
+@media (max-width: 850px) {
+    .image{
+        flex-shrink: 0;
+        width: 10rem;
+    }
+    img{
+        max-width: 100%;
+    }
+    .button {
+        width: 10rem;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .buttonText{
+        font-size: small;
+    }
+    .coverButtons {
+        max-width: 20rem;
+    }
+    .icon{
+        font-size: 1.25rem;
+        padding-top: 0.4rem;
+    }
+    .stars{
+        transform: scale(1.5);
+        margin: 0.3rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .image{
+        flex-shrink: 0;
+        width: 9rem;
+    }
+    img{
+        max-width: 100%;
+    }
+    .button {
+        width: 9rem;
+        height: 2.5rem;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .buttonText{
+        font-size: x-small;
+    }
+    .coverButtons {
+        max-width: 20rem;
+    }
+    .icon{
+        font-size: 1rem;
+        padding-top: 0.5rem;
+    }
+
+    .info{
+        margin: 0.5rem;
+    }
+    h1{
+        font-size: large;
+    }
+    .date, .author, .bookRating, .description, .details{
+        font-size: small;
+    }
+    .author{
+        padding-bottom: 0.5rem;
+    }
+    .ratingWrapper{
+        margin-bottom: 0.3rem;
+    }
+    .divider{
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+    .description{
+        margin-bottom: 0.5rem;
+    }
+    .details{
+        margin: 0;
+    }
+    .stars{
+        transform: scale(1);
+        margin: 0rem;
+    }
+    .container{
+        padding: 0;
+    }
+}
+
+@media (max-width: 485px) {
+    .image{
+        flex-shrink: 0;
+        width: 7rem;
+    }
+    img{
+        max-width: 100%;
+    }
+    .button{
+        width: 7rem;
+    }
+    .bookRating{
+        margin-right: 0;
+        padding-top: 0.2rem;
+        font-size: x-small;
+    }
+    .stars{
+        transform: scale(0.75);
+        margin: -0.2rem;
+    }
+}

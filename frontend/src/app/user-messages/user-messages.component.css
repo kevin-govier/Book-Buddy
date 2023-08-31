@@ -1,0 +1,35 @@
+:host {
+  display: block;
+}
+
+.dialog-container {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  padding: 0px;
+  opacity: 0;
+  visibility: hidden;
+  animation: fadeIn 0.25s ease-in-out forwards;
+  animation-delay: 0.1s;
+}
+
+.text {
+    color: black;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    visibility: visible;
+  }
+}

@@ -1,0 +1,29 @@
+<div class = "container-fluid">
+    <div style="background-color: white" class = "row">
+        <div class = "container">
+            <mat-card class = "mt-3">
+                <form (ngSubmit) = "searchBooks()">
+                    <mat-form-field appearance = "outline" class="searchField">
+                        <mat-label>Book Search</mat-label>
+                        <input matInput placeholder="Placeholder" [(ngModel)] = "query" name = "search">
+                        <mat-icon matSuffix>search</mat-icon>
+                        <mat-hint>Search for a Book</mat-hint>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" type = "submit">Search</button>
+                </form> 
+            </mat-card>
+
+            <div *ngIf = "books.length > 0" class = "books">
+                <div *ngFor= "let book of books" class = "book">
+                    <a [href] = "'/book-info/:' + book.id">
+                        <img [src] ="book.coverUrl" [alt] = "book.title">
+                    </a>
+                    <div class = "info">
+                        <span class = "date"><a [href] = "'/book-info/:' + book.id" class = "title">{{book.title}}</a>  {{book.date}}</span>
+                        <p *ngIf = "book.author !== undefined" class = "author">Written by {{book.author}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

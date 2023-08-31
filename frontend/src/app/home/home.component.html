@@ -1,0 +1,127 @@
+<div style="background-color: white" class = "row">
+    <div class = "container">
+    
+        <div *ngIf = "userId === undefined" class = "welcoming">
+            <h1 class = "welcome">WELCOME</h1>
+            <h2>Explore a wide variety of books.</h2>
+            <h2>Keep track of what you want to read.</h2>
+            <h2>Rate and review what you've read.</h2>
+
+            <a href="/sign-up">
+                <button mat-raised-button color="primary" type = "submit" class = "getStarted">Get Started</button>
+            </a>
+        </div>
+
+        <div *ngIf = "userId !== undefined" class = "welcoming">
+            
+          <div class = "welcome">
+            <h1 class = "welcome-text">WELCOME</h1>
+            <h1 class = "back-text">BACK</h1>
+          </div>
+
+          <div class = "buttons">
+              <a href="/collection">
+                  <button mat-raised-button color="primary" type = "submit" class = "loggedInButton">Bookshelf</button>
+              </a>
+              <a href="/reviews">
+                  <button mat-raised-button color="primary" type = "submit" class = "loggedInButton middle-button">Reviews</button>
+              </a>
+              <a href="/readingList">
+                  <button mat-raised-button color="primary" type = "submit" class = "loggedInButton">Reading List</button>
+              </a>
+          </div>
+        </div>
+
+        <div class = home-eigth>
+          <div class = "popularFiction">
+            <div class = "section-wrapper">
+              <p>POPULAR FICTION!</p>
+              <div class = "books">
+                <div *ngFor="let book of fictionBooks">
+                  <div class="book-container">
+                      <a [href] = "'/book-info/:' + book.id">
+                        <img [src]="book.cover" [alt]="book.title" class="book-cover">
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cookBooks">
+            <div class="section-wrapper">
+              <p>COOKING!</p>
+              <div class="books">
+                <div *ngFor="let book of cookBooks">
+                  <div class="book-container">
+                    <a [href] = "'/book-info/:' + book.id">
+                      <img [src]="book.cover" [alt]="book.title" class="book-cover">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="nonFictionBooks">
+            <div class="section-wrapper">
+              <p>POPULAR NON FICTION!</p>
+              <div class="books">
+                <div *ngFor="let book of nonFictionBooks">
+                  <div class="book-container">
+                    <a [href] = "'/book-info/:' + book.id">
+                      <img [src]="book.cover" [alt]="book.title" class="book-cover">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="sciFi">
+            <div class="section-wrapper">
+              <p>Sci-Fi!</p>
+              <div class="books">
+                <div *ngFor="let book of sciFiBooks">
+                  <div class="book-container">
+                    <a [href] = "'/book-info/:' + book.id">
+                      <img [src]="book.cover" [alt]="book.title" class="book-cover">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="biographyBooks">
+            <div class="section-wrapper">
+              <p>Biographies!</p>
+              <div class="books">
+                <div *ngFor="let book of biographyBooks">
+                  <div class="book-container">
+                    <a [href] = "'/book-info/:' + book.id">
+                      <img [src]="book.cover" [alt]="book.title" class="book-cover">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="selfHelpBooks">
+            <div class="section-wrapper">
+              <p>Self Help!</p>
+              <div class="books">
+                <div *ngFor="let book of selfHelpBooks">
+                  <div class="book-container">
+                    <a [href] = "'/book-info/:' + book.id">
+                      <img [src]="book.cover" [alt]="book.title" class="book-cover">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div> 

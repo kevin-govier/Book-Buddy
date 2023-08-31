@@ -1,0 +1,56 @@
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    min-height: calc(100vh - 64px); /* Makes the container take up the viewport height */
+    padding-bottom: 64px;
+    background-color: lightcyan;
+    overflow: hidden;
+}
+
+.sign-up-link {
+    font-size: 1.2rem;
+}
+
+.formContainer {
+    display: block;
+    max-width: 25rem;
+    margin: auto;
+    background: rgb(236, 236, 236);
+    padding: 3rem;
+    border-radius: 16px;
+
+    @media (max-width: 450px) {
+        max-width: 90%; 
+        padding: 2rem;
+    }
+}
+
+.formContainer mat-form-field {
+    width: 100%;
+}
+
+h1{
+    font-family: "Century Gothic", "Helvetica", sans-serif;
+    margin-bottom: 2rem;
+    font-weight: 550;
+}
+
+.button, .signUp{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    background-color:darkcyan !important;
+    font-family: "Century Gothic", "Helvetica", sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+a{
+    font-family: "Century Gothic", "Helvetica", sans-serif;
+}
+
+mat-form-field{
+    margin-bottom: 0.5rem;
+}

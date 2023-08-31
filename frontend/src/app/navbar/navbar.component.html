@@ -1,0 +1,56 @@
+<mat-toolbar class="navbar">
+    <div class = "logo" routerLink = "" routerLinkActive = "active">
+        <img src="assets/book.ico" class="icon">
+        <a class = "title">Book Buddy</a>
+    </div>
+
+
+
+    <button mat-icon-button class = "hamburger" [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/home" routerLinkActive="active">
+                <span>Home</span>
+            </button>
+            <button mat-menu-item routerLink="/bookSearch" routerLinkActive="active">
+                <span>Book Search</span>
+            </button>
+            <button mat-menu-item routerLink="/collection" routerLinkActive="active" *ngIf = "isAuthenticated">
+                <span>Bookshelf</span>
+            </button>
+            <button mat-menu-item routerLink="/reviews" routerLinkActive="active" *ngIf = "isAuthenticated">
+                <span>Reviews</span>
+            </button>
+            <button mat-menu-item routerLink="/readingList" routerLinkActive="active" *ngIf = "isAuthenticated">
+                <span>Reading List</span>
+            </button>
+            <button mat-menu-item (click) = "logout()" *ngIf = "isAuthenticated">
+                <span>Logout</span>
+            </button>
+            <button mat-menu-item routerLink="/login" routerLinkActive="active" *ngIf = "!isAuthenticated">
+                <span>Login</span>
+            </button>
+            <button mat-menu-item routerLink="/sign-up" routerLinkActive="active" *ngIf = "!isAuthenticated">
+                <span>Sign Up</span>
+            </button>
+        </mat-menu>
+    </button>
+
+    <div class = "links"> 
+        <a class="tabs home-tab" routerLink="" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">Home</a>
+        <a class = "tabs" routerLink="/bookSearch" routerLinkActive="active">Book Search</a>
+
+        <ng-container *ngIf = "isAuthenticated">
+            <a class = "tabs" routerLink="/collection" routerLinkActive="active">Bookshelf</a>
+            <a class = "tabs" routerLink="/reviews" routerLinkActive="active">Reviews</a>
+            <a class = "tabs" routerLink="/readingList" routerLinkActive="active">Reading List</a>
+            <a class = "tabs" (click) = "logout()" routerLink="/login" routerLinkActive="active">Logout</a>
+        </ng-container>
+        
+        <ng-container *ngIf = "!isAuthenticated">
+            <a class = "tabs" routerLink="/login" routerLinkActive="active">Login</a>
+            <a class = "tabs" routerLink="/sign-up" routerLinkActive="active">Sign Up</a>
+        </ng-container>
+         
+    </div>
+</mat-toolbar>

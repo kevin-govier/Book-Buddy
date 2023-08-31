@@ -1,0 +1,48 @@
+<div style="background-color: white" class = "row">
+    <div class = "container">
+        
+        <h1>Reviews</h1> 
+        <div class = "reviews">
+
+            <div *ngFor = "let review of reviews$ | async">
+
+                <div class = "review">
+
+                    <div class = "cover">
+                        <a [href] = "'/book-info/:' + review.bookId">
+                            <img [src] = "review.bookCover" [alt] = "review.bookTitle">
+                        </a>
+                    </div>
+                    
+                    <div class = "info">
+                        <div class = "titleBookDate">
+                            <span class = bookDate><a [href] = "'/book-info/:' + review.bookId" class = "title"> {{ review.bookTitle }}</a> {{review.bookDate}}</span>
+                        </div>
+                        
+                        <div class = "ratingAndDate">
+
+                            <div class = "rating">
+                                <div class = "stars" *ngFor="let star of [1, 2, 3, 4, 5]">
+                                    <mat-icon>{{ star <= review.rating ? 'star' : 'star_border' }}</mat-icon>
+                                </div>
+                            </div>
+                            
+                            <p class = "date"> Reviewed on {{ review.date }}</p>
+                        </div>
+                        
+                        <p class = "review-body">{{ review.body }}</p>
+                    </div>
+
+                    <div class = "icons">
+                        <div class = "edit">
+                            <mat-icon (click) = "editReview(review.bookId, review.bookTitle, review.bookCover, review.bookDate)">edit</mat-icon>
+                        </div>
+                        <div class = "delete">
+                            <mat-icon (click) = "removeReview(review.bookId, review.user); refreshPage()">delete</mat-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

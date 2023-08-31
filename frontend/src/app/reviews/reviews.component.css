@@ -1,0 +1,157 @@
+h1 {
+    text-align: center;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    font-family: "Century Gothic", "Helvetica", sans-serif;
+}
+
+.container{
+    background-color:lightcyan; 
+    min-height: calc(100vh - 64px);
+    width: calc(66.6667%);
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: 1000px) {
+        width: 100%
+    }
+}
+
+img{
+    max-width: 100%;
+}
+
+.row {
+    --bs-gutter-x: 0;
+}
+
+.reviews {
+    padding-top: 0.625rem;
+    border-top: 1px solid #ccc;
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.625rem;
+    padding-bottom: 0.625rem;
+    border-bottom: 1px solid #ccc;
+
+    justify-content: space-between;
+
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+}
+
+.cover {
+    display: inline-block;
+    margin-right: 0.625rem;
+}
+
+.info {
+    display: inline-block;
+    margin-right: 0.625rem;
+
+    flex: 1;
+}
+
+.stars {
+    display: inline-block;
+}
+
+.ratingAndDate {
+    display: flex;
+    align-items: center;
+    margin-top: -0.5rem;
+    padding-bottom: 1rem;
+    margin-left: -0.15rem;
+}
+.rating {
+    display: inline-block;
+}
+.date {
+    display: inline-block;
+    padding-top: 0.625rem;
+    padding-left: 0.625rem;
+    margin-bottom: 0.75rem;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.edit {
+    cursor: pointer;
+}
+.edit:hover {
+    color: #0804f9;
+}
+
+.delete {
+    cursor: pointer;
+    padding-top: 0.625rem;
+}
+.delete:hover {
+    color: red;
+}
+
+.title {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.review-body {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+
+@media (max-width: 450px) {
+    .container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .reviews{
+        width: 100%;
+        padding: 0;
+    }
+    .cover{
+        width: 25%;
+        margin-right: 0.2rem;
+    }
+    .title{
+        font-size: small;
+    }
+    .bookDate{
+        font-size: x-small;
+    }
+    .stars{
+        transform: scale(0.75);
+        margin-right: -0.4rem;
+    }
+    .icons{
+        transform: scale(0.75);
+    }
+    .date{
+        font-size: x-small;
+    }
+    .review-body{
+        font-size: small;
+    }
+    .ratingAndDate{
+        margin-left: -0.3rem;
+    }
+    .review{
+        margin-bottom: 0;
+        padding-bottom: 0.4rem;
+        padding-top: 0.4rem;
+        padding-left: 0.5rem;
+        padding-right: 0;
+    }
+}

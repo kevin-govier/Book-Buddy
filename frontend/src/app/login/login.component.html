@@ -1,0 +1,25 @@
+<div class="content">
+    <div class="formContainer mat-elevation-z8">
+        <h1>Login</h1>
+
+        <form [formGroup] = "loginForm" (ngSubmit) = "login()" novalidate>
+
+            <mat-form-field class = "email">
+                <input matInput placeholder="Email Address" formControlName="email" />
+                <mat-error *ngIf= "email?.errors?.['required']">Email is required</mat-error>
+                <mat-error *ngIf= "email?.errors?.['email']">Please enter a valid email</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class = "password">
+                <input matInput placeholder="Password" formControlName="password" type="password" />
+                <mat-error *ngIf= "password?.errors?.['required']">Password is required</mat-error>
+            </mat-form-field>
+
+            <div class = "button">
+                <button mat-raised-button color="primary" type="submit">Login</button>
+            </div>
+            
+            <span class="signUp"><a class="sign-up-link" routerLink="/sign-up">Sign Up</a></span>
+        </form>
+    </div> 
+</div>
