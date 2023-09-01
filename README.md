@@ -20,7 +20,7 @@ Book Buddy is a book management application that was made using the Angular fram
 
 2. Click on the "Releases" section in this repository and download your desired release archive.
 
-3. Once the download is complete, extract the contents of the release archive to a folder of your choice on your computer.
+3. Once the download is complete, extract the contents of the release archive.
 
 4. Open the folder where you extracted the release files in a command prompt or terminal.
 
