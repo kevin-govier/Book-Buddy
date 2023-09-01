@@ -17,7 +17,7 @@ Book Buddy is a book management application that was made using the Angular fram
 
 ## How to Use
 
-1. Ensure that you have Node.js and npm installed on your device. You can download these from the Node.js website [https://nodejs.org/] ((https://nodejs.org/)).
+1. Ensure that you have Node.js and npm installed on your device. You can download these from the Node.js website (https://nodejs.org/).
 
 2. Click on the "Releases" section in this repository and download your desired release archive.
 
