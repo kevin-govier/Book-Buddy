@@ -127,8 +127,7 @@ export class BookInfoComponent implements OnInit {
 
     if (!user) {
       // User is not logged in
-      this.dialogueService.openDialog('User is not logged in');
-      console.log('User not logged in');
+      this.router.navigateByUrl('/login');
       return;
     }
 
@@ -169,8 +168,7 @@ export class BookInfoComponent implements OnInit {
 
     if (!user) {
       // User is not logged in
-      this.dialogueService.openDialog('User is not logged in');
-      console.log('User not logged in');
+      this.router.navigateByUrl('/login');
       return;
     }
   
