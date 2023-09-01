@@ -33,4 +33,4 @@ Book Buddy is a book management application that was made using the Angular fram
 
 8. Start the frontend server by running the following command: `npm start`.
 
-9. In your browser of choice, enter the following URL: http://localhost:4200/
+9. In your browser of choice, enter the following URL: http://localhost:4200/.
