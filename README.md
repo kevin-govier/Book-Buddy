@@ -30,12 +30,14 @@ Book Buddy is a book management application that was made using the Angular fram
 
 4. Open the folder where you extracted the release files in a command prompt or terminal.
 
-5. In the command prompt or terminal, use the `cd` command to navigate to the "backend" folder of the app.
+5. In the comand prompt or terminal, run the following command: `npm install -g @angular/cli`.
 
-6. Start the backend server by running the following command: `npm start`.
+6. In the command prompt or terminal, use the `cd` command to navigate to the "backend" folder of the app.
 
-7. In another command prompt or terminal, use the `cd` command to navigate to the "frontend" folder of the app.
+7. Start the backend server by running the following command: `npm start`.
 
-8. Run the command: `npm install` and then start the frontent by running the command: `npm start`.
+8. In another command prompt or terminal, use the `cd` command to navigate to the "frontend" folder of the app.
 
-9. In your browser of choice, enter the following URL: http://localhost:4200/.
+9. Run the command: `npm install` and then start the frontent by running the command: `npm start`.
+
+10. In your browser of choice, enter the following URL: http://localhost:4200/.
