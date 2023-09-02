@@ -74,6 +74,7 @@ img{
     padding-top: 0.625rem;
     padding-left: 0.625rem;
     margin-bottom: 0.75rem;
+    font-family: "Century Gothic", "Helvetica", sans-serif;
 }
 
 .icons {
@@ -102,11 +103,14 @@ img{
     color: black;
     font-weight: bold;
     font-size: larger;
+    font-family: "Century Gothic", "Helvetica", sans-serif;
+}
+.bookDate{
+    font-family: "Century Gothic", "Helvetica", sans-serif;
 }
 
 .review-body {
     white-space: pre-wrap;
-    word-wrap: break-word;
     word-break: break-all;
     overflow: hidden;
 }
