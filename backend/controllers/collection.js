@@ -5,7 +5,7 @@ const Book = require('../models/book');
 exports.fetchAll = async (req, res, next) => {
     const user = req.query.user;
     try {
-        const [allBooks] = await Book.fetchAllCollection(user);
+        const allBooks = await Book.fetchAllCollection(user);
         res.status(200).json(allBooks);
     }
     catch(err){
@@ -73,7 +73,7 @@ exports.deleteBook = async (req, res, next) => {
 
     try {
         
-        // Check if the user is authenticated (valid JWT token)
+        // Checks if the user is logged in
         if (!req.isLoggedIn) {
             const error = new Error('User is not authenticated');
             error.statusCode = 401;

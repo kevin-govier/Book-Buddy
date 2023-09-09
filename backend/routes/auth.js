@@ -14,7 +14,8 @@ router.post(
         body('name').trim().not().isEmpty(),
         body('email').isEmail().withMessage('Please enter a valid email.').custom(async (email) => {
             const user = await User.find(email);
-            if(user[0].length > 0){
+            //Checks if the entered email has already been used
+            if(user !== undefined){
                 return res.status(400).json({ error: 'Email address already exists' });
             }
         })

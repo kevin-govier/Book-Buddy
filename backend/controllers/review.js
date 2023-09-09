@@ -5,7 +5,7 @@ const Review = require('../models/review');
 exports.fetchAll = async (req, res, next) => {
     const user = req.query.user;
     try {
-        const [allReviews] = await Review.fetchAllReviews(user);
+        const allReviews = await Review.fetchAllReviews(user);
         res.status(200).json(allReviews);
     }
     catch(err){
@@ -34,7 +34,7 @@ exports.postBookReview = async (req, res, next) => {
 
     try{
         
-        //Checks if the user is adding a book that they've already added
+        //Checks if the user is reviewing a book that they've already reviewed
         const existingReview = await Review.findReview(bookId, user);
         if (existingReview) {
             return res.status(400).json({ message: 'User already has a review for this book' });

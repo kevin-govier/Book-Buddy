@@ -114,7 +114,6 @@ export class CollectionComponent implements OnInit{
       },
       (error) => {
         this.dialogueService.openDialog('Error:', error);
-        console.error('Error:', error);
       }
     );
   }
@@ -144,7 +143,6 @@ export class CollectionComponent implements OnInit{
       },
       (error) => {
         this.dialogueService.openDialog('Error:', error);
-        console.error('Error:', error);
       }
     );
   }

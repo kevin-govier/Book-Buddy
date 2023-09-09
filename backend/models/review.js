@@ -12,31 +12,59 @@ module.exports = class Review {
         this.date = date;
     }
 
-
-
     static findReview(bookId, user) {
-        return db.execute('SELECT * FROM reviews WHERE bookId = ? AND user = ?', [bookId, user])
-          .then(([rows]) => {
-            if (rows.length > 0) {
-              return rows[0];
-            }
-            return null;
+        return new Promise((resolve, reject) => {
+            db.get('SELECT * FROM reviews WHERE bookId = ? AND user = ?', [bookId, user], (err, row) => {
+                if (err) {
+                    reject(err);
+                } 
+                else {
+                    resolve(row);
+                }
+            });
         });
     }
 
     static deleteReview(bookId, user) {
-        return db.execute('DELETE FROM reviews WHERE bookId = ? AND user = ?', [bookId, user]);
+        return new Promise((resolve, reject) => {
+            db.run('DELETE FROM reviews WHERE bookId = ? AND user = ?', [bookId, user], function (err) {
+                if (err) {
+                    reject(err);
+                } 
+                else {
+                    resolve(this);
+                }
+            });
+        });
     }
 
     static saveReview(review) {
-        return db.execute(
-            'INSERT INTO reviews (bookId, bookTitle, bookCover, bookDate, body, rating, user, date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', 
-            [review.bookId, review.bookTitle, review.bookCover, review.bookDate, review.body, review.rating, review.user, review.date]
-        );
+        return new Promise((resolve, reject) => {
+            db.run(
+                'INSERT INTO reviews (bookId, bookTitle, bookCover, bookDate, body, rating, user, date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+                [review.bookId, review.bookTitle, review.bookCover, review.bookDate, review.body, review.rating, review.user, review.date],
+                (err) => {
+                    if (err) {
+                        reject(err);
+                    } 
+                    else {
+                        resolve();
+                    }
+                }
+            );
+        });
     }
 
     static fetchAllReviews(user) {
-        return db.execute('SELECT * FROM reviews WHERE user = ?', [user]);
+        return new Promise((resolve, reject) => {
+            db.all('SELECT * FROM reviews WHERE user = ?', [user], (err, rows) => {
+                if (err) {
+                    reject(err);
+                } 
+                else {
+                    resolve(rows);
+                }
+            });
+        });
     }
-
-}
+};

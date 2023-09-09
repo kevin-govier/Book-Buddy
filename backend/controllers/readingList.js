@@ -5,7 +5,7 @@ const Book = require('../models/book');
 exports.fetchAll = async (req, res, next) => {
     const user = req.query.user;
     try {
-        const [allBooks] = await Book.fetchAllReadingList(user);
+        const allBooks = await Book.fetchAllReadingList(user);
         res.status(200).json(allBooks);
     }
     catch(err){

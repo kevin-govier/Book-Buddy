@@ -37,7 +37,6 @@ export class AuthInterceptorService implements HttpInterceptor {
     localStorage.setItem('loginStatus', '0');
     this.authService.isUserLoggedIn$.next(false);
     this.router.navigate(['login']);
-    this.dialogueService.openDialog('Session expired.');
     setTimeout(() => {
       window.location.reload();
     }, 1500);

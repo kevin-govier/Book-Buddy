@@ -32,4 +32,3 @@ router.post(
 router.delete('/:bookId', auth, reviewController.deleteBookReview);
 
 module.exports = router;
- 

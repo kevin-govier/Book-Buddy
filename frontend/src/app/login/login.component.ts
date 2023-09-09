@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {
     this.loginForm = this.createFormGroup();
     this.userId = this.authService.userId;
-    console.log("(LOGIN) user ID: " +this.userId);
   }
 
   createFormGroup(): FormGroup{

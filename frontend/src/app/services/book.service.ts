@@ -85,14 +85,12 @@ export class BookService {
 
   addBookToReadingList(bookId: string, bookTitle: string, bookCover: string, bookDate: string, user: number): Observable<any> {
     const requestBody = { bookId, bookTitle, bookCover, bookDate, user };
-    console.log('Request Body:', requestBody);
     return this.http.post(`${this.url}/readingList/add`, requestBody, this.httpOptions).pipe(
       catchError((error: any) => {
         let errorMessage = 'An error occurred.';
         if (error.error && error.error.message) {
           errorMessage = error.error.message;
         }
-        console.error(errorMessage);
         return errorMessage;
       })
     );
@@ -100,14 +98,12 @@ export class BookService {
 
   addBookToCollection(bookId: string, bookTitle: string, bookCover: string, bookDate: string, user: number): Observable<any> {
     const requestBody = { bookId, bookTitle, bookCover, bookDate, user };
-    console.log('Request Body:', requestBody);
     return this.http.post(`${this.url}/collection/add`, requestBody, this.httpOptions).pipe(
       catchError((error: any) => {
         let errorMessage = 'An error occurred.';
         if (error.error && error.error.message) {
           errorMessage = error.error.message;
         }
-        console.error(errorMessage);
         return errorMessage;
       })
     );
@@ -146,14 +142,12 @@ export class BookService {
 
   addReview(bookId: string, bookTitle: string, bookCover: string, bookDate: string, body: string, rating: number, user: number, date: string): Observable<any> {
     const requestBody = { bookId, bookTitle, bookCover, bookDate, body, rating, user, date };
-    console.log(requestBody);
     return this.http.post(`${this.url}/review/add`, requestBody, this.httpOptions).pipe(
       catchError((error: any) => {
         let errorMessage = 'An error occurred.';
         if (error.error && error.error.message) {
           errorMessage = error.error.message;
         }
-        console.error(errorMessage);
         return errorMessage;
       })
     );

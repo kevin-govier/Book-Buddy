@@ -29,4 +29,3 @@ router.post(
 router.delete('/:bookId', auth, readingListController.deleteBook);
 
 module.exports = router;
- 
