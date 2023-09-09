@@ -2,10 +2,10 @@
 ## A Personal Book Management and Review App Made Using Angular
 
 ![Book Buddy Home Page](screenshots/home-page.png)
-![Book Buddy Home Page](screenshots/book-search.png)
-![Book Buddy Home Page](screenshots/reading-list.png)
-![Book Buddy Home Page](screenshots/book-info.png)
-![Book Buddy Home Page](screenshots/create-reviews.png)
+![Book Buddy Book Search](screenshots/book-search.png)
+![Book Buddy Reading List](screenshots/reading-list.png)
+![Book Buddy Book Info](screenshots/book-info.png)
+![Book Buddy Reviews](screenshots/create-reviews.png)
 
 Book Buddy is a book management application that was made using the Angular framework and uses the Google Books API to provide the user with a wide variety of books to explore. Using this app, users are able to:
 
@@ -28,8 +28,8 @@ Book Buddy is a book management application that was made using the Angular fram
 
 3. Once the download is complete, extract the contents of the release archive.
 
-4. In a command prompt or terminal, open the folder with the name of the app and release archive as its name in the folder where you extracted the release files.
+4. In a command prompt or terminal, open the folder with the name of the release archive in the folder where you extracted the release files.
 
-5. In the comand prompt or terminal, run the following command: `node setup.js`.
+5. In the command prompt or terminal, run the following command: `node setup.js`.
 
 6. In your browser of choice, enter the following URL: http://localhost:4200/.
