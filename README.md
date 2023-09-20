@@ -7,7 +7,7 @@
 ![Book Buddy Book Info](screenshots/book-info.png)
 ![Book Buddy Reviews](screenshots/create-reviews.png)
 
-Book Buddy is a book management application that was made using the Angular framework and uses the Google Books API to provide the user with a wide variety of books to explore. Using this app, users are able to:
+Book Buddy is a book management application that was made using the Angular framework and uses the Google Books API to provide the user with a wide variety of books to explore. The Book Buddy application stores user information using an SQLite database. Using this app, users are able to:
 
 * Search and explore numerous books
 
